@@ -1,6 +1,5 @@
-module.exports = {
-
-
+let configEvents = (client) => {
 
 	
+
 }

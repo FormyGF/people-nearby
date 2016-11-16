@@ -20,6 +20,7 @@ io.on('connection', function(client) {
 	io.clients((err, clients) => {
 
 		console.log(clients);
+
 	})
 
 // when application disconnect with server
@@ -41,8 +42,9 @@ io.on('connection', function(client) {
 	client.on('verifyUser', function(message) {
 
 		console.log(`confirming user: ${message.userId} with socket: ${message.socketId}`);
-		users[message.userId] =  userSockets[message.socketId];
-		users[message.userId].emit("connectionConfirmedByServer", {});
+		// users[message.userId] =  userSockets[message.socketId];
+		users[message.userId] = message.socketId
+		userSockets[users[message.userId]].emit("connectionConfirmedByServer", {});
 
 	}) 
 
@@ -63,7 +65,7 @@ io.on('connection', function(client) {
 
 let sendMessage = (content) => {
 
-	users[content.to].emit("newMessage", {message : content.message});
+	userSockets[users[content.from]].emit("newMessage", {message : content.message, from: content.from});
 
 }
 
