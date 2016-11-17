@@ -25,7 +25,7 @@ io.on('connection', function(client) {
 // when application disconnect with server
 	client.on('disconnect', (message) => {
 
-		console.log(`disconnected: ${message}`);
+		console.log(`Disconnected: ${message}`);
 
 	})
 
@@ -40,9 +40,9 @@ io.on('connection', function(client) {
 // bind username with socket id
 	client.on('verifyUser', function(message) {
 
-		console.log('=======================================================')
-		console.log(`\t Confirming user: ${message.userId} \n\t Socket ID: ${message.socketId} \n\t DeviceToken: ${message.deviceToken}`);
-		console.log('=======================================================')
+		console.log('================= Comfirming User Info =================')
+		console.log(`\t Confirming user: ${message.userId} \n\t Socket ID: ${message.socketId} \n\t DeviceToken: ${message.deviceToken ? message.deviceToken.slice(0,7) : "simulator"}...`);
+		console.log('========================================================')
 		// users[message.userId] =  userSockets[message.socketId];
 		users[message.userId] = message.socketId
 		deviceTokens[message.userId] = message.deviceToken;
@@ -74,6 +74,7 @@ let sendMessage = (content) => {
 	if (!users[content.to]) // incase the user doesn't exist
 	{
 		console.log(`Cannot find user with id ${content.to}`);
+		console.log(content);
 		return;
 	}
 
@@ -107,11 +108,15 @@ let getOnlineUser = () => { // get users that is currently online
 
 	return new Promise((resolve, reject) => {
 
-		console.log('getting current online user:');
+		console.log('Getting current online user:');
 
 		io.clients((err, clients) => {
 
-			console.log(clients);
+			clients.forEach((element, index) => {
+
+				console.log(`\t ${index + 1}. ${element}`)
+
+			})
 			resolve(clients);
 
 		})
@@ -132,7 +137,7 @@ let cacheUserMessage = (message) => {
 
 	if (messageCache[message.to]) {
 
-		messageCache[message.to].push(message.message);
+		messageCache[message.to].push(message);
 
 	} else {
 
@@ -145,18 +150,21 @@ let cacheUserMessage = (message) => {
 let attemptRetrieveUserMessage = (userId) => {
 
 	// TODO: get the messge that stored in messageCache when then user is offline
-	if (messageCache[userId]) {
+	if (messageCache[userId] && messageCache[userId].length > 0) {
+
 
 		let waitingMessage = messageCache[userId];
+		console.log(`==> Getting waiting message from cache: ${waitingMessage.length} messages`)
+
 		waitingMessage.forEach( function(element) {
 			sendMessage(element);
 		});
 
-		messageCache[userId] = null;
+		messageCache[userId].shift();
 
 	} else {
 
-		console.log(`No waiting message found for user: ${userId}`);
+		console.log(`==> No waiting message found for user: ${userId}\n `);
 
 	}
 }
