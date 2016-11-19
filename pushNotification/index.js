@@ -20,7 +20,7 @@ let pushNotifWithDeviceToken = (token) => {
 	note.expiry = Math.floor(Date.now() / 1000) + 3600; // Expires 1 hour from now.
 	note.badge = 1;
 	// note.sound = "leiduan.m4a";
-	// note.sound = "you_have_a_new_message.m4a"
+	note.sound = "you_have_a_new_message.m4a"
 	// note.alert = "\uD83D\uDCE7 \u2709 You have a new message";
 	note.alert = "You have a new message";
 	note.payload = {
