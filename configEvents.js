@@ -1,5 +1,0 @@
-let configEvents = (client) => {
-
-	
-
-}

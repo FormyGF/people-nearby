@@ -1,0 +1,33 @@
+{
+  "appenders": [
+    {
+      "type": "console",
+      "maxLogSize": 20480,
+      "backups": 3,
+      "category": "server-logger"
+    },
+    {
+      "type": "file",
+      "absolute": true,
+      "filename": "/Users/yang/Dropbox/computer-science/810/people-server/logs/server.log",
+      "maxLogSize": 20480,
+      "backups": 3,
+      "category": "server-logger"
+    },
+    {
+      "type": "console",
+      "absolute": true,
+      "maxLogSize": 20480,
+      "backups": 3,
+      "category": "notification-logger"
+    },
+    {
+      "type": "file",
+      "absolute": true,
+      "filename": "/Users/yang/Dropbox/computer-science/810/people-server/logs/notification.log",
+      "maxLogSize": 20480,
+      "backups": 3,
+      "category": "notification-logger"
+    }
+  ]
+}

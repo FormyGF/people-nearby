@@ -1,0 +1,47 @@
+[2016-12-02 14:31:05.199] [TRACE] server-logger - Successfully pushed notification to user
+[2016-12-02 14:31:32.464] [TRACE] server-logger - 
+connected with -jiiJfc22F162HCwAAAA
+[2016-12-02 14:31:32.466] [TRACE] server-logger - 
+Getting current online user:
+[2016-12-02 14:31:32.467] [TRACE] server-logger - 
+	 1. -jiiJfc22F162HCwAAAA
+[2016-12-02 14:31:32.556] [TRACE] server-logger - 
+================= Comfirming User Info =================
+	 Confirming user: yangtianxiao123@gmail.com 
+	 Socket ID: /#-jiiJfc22F162HCwAAAA 
+	 DeviceToken: 4275FCB...
+========================================================
+[2016-12-02 14:31:32.558] [TRACE] server-logger - 
+==> No waiting message found for user: yangtianxiao123@gmail.com
+ 
+[2016-12-02 14:31:36.564] [TRACE] server-logger - 
+connected with m-QstVMAuC_oJ1iuAAAB
+[2016-12-02 14:31:36.564] [TRACE] server-logger - 
+Getting current online user:
+[2016-12-02 14:31:36.565] [TRACE] server-logger - 
+	 1. -jiiJfc22F162HCwAAAA
+[2016-12-02 14:31:36.565] [TRACE] server-logger - 
+	 2. m-QstVMAuC_oJ1iuAAAB
+[2016-12-02 14:31:36.572] [TRACE] server-logger - 
+================= Comfirming User Info =================
+	 Confirming user: txyang93@gmail.com 
+	 Socket ID: /#m-QstVMAuC_oJ1iuAAAB 
+	 DeviceToken: simulator...
+========================================================
+[2016-12-02 14:31:36.572] [TRACE] server-logger - 
+==> No waiting message found for user: txyang93@gmail.com
+ 
+[2016-12-02 14:31:40.324] [TRACE] server-logger - 
+Disconnected: transport close
+[2016-12-02 14:31:41.366] [TRACE] server-logger - 
+[object Object]
+[2016-12-02 14:31:41.367] [TRACE] server-logger - 
+Getting current online user:
+[2016-12-02 14:31:41.367] [TRACE] server-logger - 
+	 1. m-QstVMAuC_oJ1iuAAAB
+[2016-12-02 14:31:41.368] [TRACE] server-logger - 
+User /#-jiiJfc22F162HCwAAAA is offline
+[2016-12-02 14:31:41.368] [TRACE] server-logger - 
+Caching message into message waiting list
+[2016-12-02 14:31:41.369] [TRACE] server-logger - Pushing notification to token: 4275FCBCAF4C17C0E338ADBAF1C188A2C27903B0153173E4A71A5D5CF8E495AB
+[2016-12-02 14:31:41.765] [TRACE] server-logger - Successfully pushed notification to user
