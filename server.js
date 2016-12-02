@@ -67,7 +67,7 @@ io.on('connection', function(client) {
 	})
 });
 
-server.listen(3000);
+server.listen(80);
 
 let sendMessage = (content) => {
 
@@ -160,7 +160,7 @@ let attemptRetrieveUserMessage = (userId) => {
 			sendMessage(element);
 		});
 
-		messageCache[userId].shift();
+		messageCache[userId] = [];
 
 	} else {
 
